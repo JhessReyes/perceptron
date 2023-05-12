@@ -1,9 +1,10 @@
 <script>
-  /*   // @ts-nocheck
-   */
+  // @ts-nocheck
+
   import { Label, Input, Button, Card, Toast } from "flowbite-svelte";
   import { Neti, revaluateW } from "./perceptron";
   import { slide } from "svelte/transition";
+  import { goto } from "$app/navigation";
   /*   import type { LogicFunType } from "./perceptron"; */
   let fun = [
     { x1: 0, x2: 0, out: 0 },
@@ -66,6 +67,7 @@
   <Card size="xl" class="w-full">
     <div class="mb-6 w">
       <Button on:click={() => train(fun)}>Entrenar</Button>
+      <Button on:click={() => goto("/final")}>Evaluacion Final</Button>
 
       <div class="grid grid-cols-2 gap-4 py-8">
         <div>
